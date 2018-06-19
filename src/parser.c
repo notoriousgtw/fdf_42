@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/30 14:34:31 by mhurd             #+#    #+#             */
-/*   Updated: 2018/06/18 17:16:10 by gwood            ###   ########.fr       */
+/*   Updated: 2018/06/18 17:21:02 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static t_plot	*make_plot(void)
 int				check_fd(int fd, char *filename)
 {
 	if (fd < 0)
-		ft_error(ft_strcat(filename, "doesn't exist"));
+		ft_error(ft_strcat(filename, " doesn't exist"));
 	return (1);
 }
 
@@ -80,7 +80,7 @@ t_plot			*parse_file(char *filename)
 	fd = open(filename, O_RDONLY);
 	list = NULL;
 	plot = make_plot();
-	while ((result = ft_gnl(fd, &buff)) && check_fd(fd))
+	while ((result = ft_gnl(fd, &buff)) && check_fd(fd, filename))
 	{
 		if (plot->width == -1)
 			plot->width = ft_cntwrd(buff, ' ');
