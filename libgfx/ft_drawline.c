@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/30 14:36:16 by mhurd             #+#    #+#             */
-/*   Updated: 2018/06/18 16:34:10 by gwood            ###   ########.fr       */
+/*   Updated: 2018/06/18 17:10:12 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void			draw_point(t_data *d, int x, int y, float z)
 			which = ((z - d->plot->z_min)
 			/ (d->plot->z_max - d->plot->z_min)) * 100;
 		color = d->colors[abs((int)which - 1)];
-		
+
 		i = (x * 4) + (y * d->s_line);
 		d->pixel_img[i] = color;
 		d->pixel_img[++i] = color >> 8;
